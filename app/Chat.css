@@ -1,0 +1,302 @@
+/* Main container for chat and chart */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #121417;
+}
+
+/* Chat container (fixed at extreme left) */
+.chat-container {
+  flex: 0 0 25%; /* Exactly 25% of width, fixed to the left */
+  height: 100%;
+  padding: 10px;
+  border-right: 1px solid #2a2d35;
+  background-color: #1c1f26;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Chat title */
+.chat-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eaeaea;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Chat box */
+.chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #2a2d35;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #252A34;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  padding: 8px 12px; /* Reduce from 12px 16px */
+  border-radius: 18px;
+  max-width: fit-content;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  margin-left: auto; /* Forces message bubbles to the right */
+  margin-bottom: 12px; /* ✅ Adds more space between messages */
+
+
+}
+
+.chat-user {
+  align-self: flex-end; /* Pushes message to the right */
+  background-color: #0d6efd;
+  color: white;
+  margin-left: auto; /* Forces the bubble to align fully to the right */
+}
+
+
+.chat-bot {
+  align-self: flex-start; /* Pushes bot messages to the left */
+  background-color: #2a2d35;
+  color: #eaeaea;
+  text-align: left; /* Ensures text is aligned left */
+  margin-right: auto; /* Forces bot bubbles to the left */
+}
+
+
+/* Chat form */
+.chat-form {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #2a2d35;
+  background: #1c1f26;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #444a56;
+  border-radius: 20px;
+  font-size: 14px;
+  background: #252A34;
+  color: #eaeaea;
+}
+
+.chat-button {
+  padding: 12px 16px;
+  border: none;
+  background: linear-gradient(135deg, #4CAF50, #1E7D32);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s;
+  text-transform: uppercase;
+}
+
+.chat-button:hover {
+  background: linear-gradient(135deg, #45a049, #1B5E20);
+}
+
+.chat-button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* Chart container (No extra left space) */
+.chart-container {
+  flex: 1; /* Takes remaining space without extra left space */
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #121417;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin-top: 60px; /* Push the chart and sentiment box down */
+
+}
+
+/* Smart Chart Header */
+.smart-chart-header {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+/* Sentiment Section */
+.sentiment-container {
+  width: 100%;
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #252A34;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sentiment Header */
+.sentiment-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Sentiment Title */
+.sentiment-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+/* Sentiment Button */
+.sentiment-button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4CAF50, #1E7D32);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  box-shadow: 0 3px 6px rgba(0, 255, 100, 0.3);
+  letter-spacing: 1px;
+  outline: none;
+}
+
+/* Button Hover */
+.sentiment-button:hover {
+  background: linear-gradient(135deg, #45a049, #1B5E20);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 255, 100, 0.3);
+}
+
+/* Sentiment Summary */
+.sentiment-summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Sentiment Bar Wrapper */
+.sentiment-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Sentiment Bar Colors */
+.sentiment-bar.positive {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.sentiment-bar.neutral {
+  background: rgba(255, 152, 0, 0.2);
+}
+
+.sentiment-bar.negative {
+  background: rgba(255, 0, 0, 0.3);
+}
+
+/* Progress Bar */
+.bar {
+  height: 10px;
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+.sentiment-bar.positive .bar {
+  background: linear-gradient(90deg, #4CAF50, #2E7D32);
+}
+
+.sentiment-bar.neutral .bar {
+  background: linear-gradient(90deg, #FF9800, #E65100);
+}
+
+.sentiment-bar.negative .bar {
+  background: linear-gradient(90deg, #FF0000, #B71C1C);
+}
+
+
+/* App Header */
+.app-header {
+  width: 100%;
+  height: 0px; /* Adjust height as needed */
+  background: #1c1f26; /* Dark theme background */
+  color: #eaeaea; /* Light text color */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 1.8rem; /* Adjust font size */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  position: fixed; /* Fix it at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+.clear-chat-button {
+  padding: 12px 16px;
+  border: none;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c); /* Red gradient */
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.1s;
+  text-transform: uppercase;
+}
+
+.clear-chat-button:hover {
+  background: linear-gradient(135deg, #c62828, #9a0007); /* Darker red on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+.clear-chat-button:active {
+  transform: scale(0.95); /* Pressed effect */
+}
