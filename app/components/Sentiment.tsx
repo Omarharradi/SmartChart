@@ -12,8 +12,7 @@ const Sentiment: React.FC = () => {
   // 🚀 Ensure scores are correctly processed
   const scores = sentimentData.map((item) => item.score);
   const totalScore = scores.reduce((sum, score) => sum + score, 0);
-  //const avgScore = scores.length > 0 ? totalScore / scores.length : 0;
-  const avgScore =0.37;
+  const avgScore = scores.length > 0 ? totalScore / scores.length : 0;
 
   // Convert to percentage (0% = fully negative, 100% = fully positive)
   const sentimentPercentage = (avgScore + 1) * 50; // Scales -1 to 1 into a 0-100% range
