@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # Twitter API Credentials (Use API v2 Keys)
-BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAAdoygEAAAAASWfB%2Beowc7IYEn89TRopt2Y11kQ%3DG2tyRFmHykS3oYripH8Lmoyo4HZH2n9HaM4ajFaWvk6SJ2iba4"
+BEARER_TOKEN = "API_KEY"
 
 # Initialize Tweepy for API v2
 client = tweepy.Client(bearer_token=BEARER_TOKEN)
